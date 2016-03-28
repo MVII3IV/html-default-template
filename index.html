@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+    <link href="Bootstrap/css/bootstrap.min.css"  rel="stylesheet">
+    <link href="xeditable/css/xeditable.css"  rel="stylesheet">
+
+    <script src="Jquery/jquery.js"></script>
+    <script src="Angular/angular.js"></script>
+    <script src="Bootstrap/js/bootstrap.js"></script>
+    <script src="xeditable/js/xeditable.js"></script>
+    <script>
+
+        var app = angular.module("app",["xeditable"]);
+
+        app.run(function(editableOptions) {
+          editableOptions.theme = 'bs3';
+        });
+
+        app.controller("mainController", function($scope){
+            $scope.test = "works!";
+        });
+
+    </script>
+</head>
+<body ng-controller="mainController">
+    <h1>hola {{test}}</h1>
+</body>
+</html>
